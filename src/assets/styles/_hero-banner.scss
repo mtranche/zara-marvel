@@ -1,0 +1,32 @@
+.detail--hero-banner{
+  width: 100%;
+  background-color: $secondary-bg;
+  color: $secondary-text;
+  height: 32rem;
+  padding:0 27.5rem 0 27.5rem;
+  display: flex;
+  gap: 4.6rem;
+
+  img.hero-image {
+    height: 32rem;
+    width: auto;
+  }
+
+  &__resume{
+    padding: 4.8rem 0 4.8rem 4.8rem;
+
+    h1{
+      font-size: 4rem;
+      line-height: 4.688rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      min-width: 59rem;
+    }
+
+    .hero-favorite{
+      float: right;
+      margin-top: 2.5%;
+      cursor: pointer;
+    }
+  }
+}

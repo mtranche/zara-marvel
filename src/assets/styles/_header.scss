@@ -1,0 +1,41 @@
+.marvel-header {
+  background: $secondary-bg;
+  height: 8.4rem;
+  padding: 1.6rem 4.8rem;
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: $secondary-text;
+  
+  &__loading {
+    border-bottom: 0.5rem solid $tertiary-bg;
+  }
+   &--logo {
+    cursor: pointer;
+  }
+
+  .favorites-wrapper {
+    padding: 0.8rem;
+    width: 5.6rem;
+    height: 3.768rem;
+    text-decoration: none;
+    color:inherit;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      width: 2.4rem;
+      height: auto;
+      text-decoration: inherit;
+    }
+
+    > span {
+      text-decoration: none;
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+}

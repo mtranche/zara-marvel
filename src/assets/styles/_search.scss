@@ -1,0 +1,38 @@
+.marvel-container {
+  &--search {
+    padding: 1.8rem 0;
+    position: relative;
+
+    .search-ico {
+      position: absolute;
+      width: 1.3rem;
+      height: 1.3rem;
+      top: 2rem;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    input[type=text] {
+      padding-left: 2.5rem;
+      border: 0;
+      border-bottom: 0.1rem solid $secondary-bg;
+      width: 100%;
+      color: $primary-text;
+      outline: none;
+      text-transform: uppercase;
+
+      &::placeholder {
+        color: $input-placeholder;
+      }
+    }
+
+    .search-results {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1.406;
+      text-transform: uppercase;
+      margin: 1.2rem 0;
+
+    }
+  }
+}
