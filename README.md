@@ -19,6 +19,7 @@ y nos dirá la versión de node y npm que tenemos, en caso de que no responda na
 
 ## Estructura del proyecto
 El proyecto tiene la estructura:
+
 ![estructura del carpetas](https://github.com/mtranche/zara-marvel/blob/feature/marvel/estructura.png)
 
  - En la carpeta raíz están todos los archivos de configuración, las variables de entornos, los packages de dependencias y cosas generícas de la aplicación
