@@ -1,6 +1,8 @@
 # ZARA WEB CHALLENGE
 Esta es un aplicación para obtener información sobre diferentes personajes de Marvel usando la api que ellos ofrecen.
+
 Es una aplicación react creada con **VITE**.
+
 La carpeta raíz del proyecto contiene todos los archivos necesarios para poner en marcha la aplicación en modo **desarrollo**, y, además una capeta dist donde están los archivos preparados para poner en un servidr de **producción** con los css y js minificados, uglificados y en un solo archivo cada uno.
 
 ## Cómo levantar la aplicación en modo desarrollo
