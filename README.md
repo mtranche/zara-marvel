@@ -30,11 +30,11 @@ El proyecto tiene la estructura:
    
  - - En components los componentes que se usan en la aplicación, cada uno con un archivo de estilos _*.scss  asociado en la carpeta assets/styles.
 
- -- En context está el contexto.
+ - - En context está el contexto.
   
-  --En hook los hooks usados.
+  - -En hook los hooks usados.
   
-  --En routes el enrutador para navegar entre vistas.
+  - -En routes el enrutador para navegar entre vistas.
   
   y en views las distintas vistas que usan los componentes de components.
 
