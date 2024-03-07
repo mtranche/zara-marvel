@@ -11,9 +11,9 @@ La carpeta raíz del proyecto contiene todos los archivos necesarios para poner 
 y nos dirá la versión de node y npm que tenemos, en caso de que no responda nada debemos ir a:
 ([https://nodejs.org/en/download/](https://nodejs.org/en/download/) y seguir los pasos.
 2. Abre una consola en la carpeta raíz del proyecto ***/zara-marvel*** y ponemos el siguiente comando para instalar todas las dependencias del archivo *package.json*
- ``  npm install``
+ ``npm install``
 3. Lanzar la aplicación: en la misma consola donde hemos hecho npm install, ahora ponemos el comando:
-``  npm run dev ``
+   ``npm run dev``
 4. Como dice la consola, abrimos [http://localhost:8080/](http://localhost:8080/)
 
 
