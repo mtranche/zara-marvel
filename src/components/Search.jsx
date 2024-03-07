@@ -7,12 +7,10 @@ import { MarvelContext } from '../contexts/MarvelContext';
 function Search({ heroes, setHeroes}) {
   const [search, setSearch] = useState('');
   const [error, setError] = useState({});
+  const [message, setMessage] = useState('')
   const ctx = useContext(MarvelContext)
 
-  useEffect(
-    ()=>{
-    },[search]
-  );
+  useEffect(()=>{},[search]);
 
  const handleSearchKeyDown =  (evt) => {
   setSearch(search);
@@ -20,7 +18,8 @@ function Search({ heroes, setHeroes}) {
       evt.preventDefault();
       const searchTerm = search.toLowerCase();      
       const hero = heroes.find(hero => hero.name.toLowerCase().includes(searchTerm));     
-      if(hero) {  
+      if(hero) {
+        setMessage("");
         const id = hero.id;      
         const characterApi = `${import.meta.env.VITE_MARVEL_API_CHARACTERS_ENDPOINT}/${id}?apikey=${import.meta.env.VITE_MARVEL_API_KEY}`
         const getCharacter = async function(){
@@ -35,7 +34,7 @@ function Search({ heroes, setHeroes}) {
         getCharacter();
     } else {
       setHeroes(heroes)
-        console.log(`heroe ${search} is not in the list`);
+      setMessage(`heroe ${search} is not in the list`);
     }
 
   }
@@ -55,6 +54,7 @@ function Search({ heroes, setHeroes}) {
           onKeyDown={handleSearchKeyDown}
         />
         <span className='search-results'>{heroes.length} {heroes.length==1? 'result':'results'} </span>
+        <p>{message}</p>
       </div> 
      </form>
   )

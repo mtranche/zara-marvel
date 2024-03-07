@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../assets/styles/marvel.scss';
-import { useFavorites } from '../contexts/FavoritesContext';
+import useMarvelFavorites from '../hooks/useMarvelFavorites';
+import { MarvelContext } from '../contexts/MarvelContext';
+
 
 const Card = ({ hero,  onCardClick}) => {
+  const navigate = useNavigate();
+  const { isFavorite, toggleIsFavorite} = useMarvelFavorites(); 
   const [isFav, setIsFav] = useState(false); 
-  const { addToFavorites, removeFromFavorites } = useFavorites();
- 
-   const handleAddFavorite = () => {
-    setIsFav(!isFav);
-    if(isFav){
-      removeFromFavorites(hero.id);
-    }else{
-      addToFavorites(hero.id);
-    }   
+  const { addFavorite, removeFavorite, favorites} = useContext(MarvelContext);  
+
+  const handleAddFavorite = (ev) => {
+  setIsFav(!isFav);
+  toggleIsFavorite(ev.target.id);
+  if(isFav){
+    removeFavorite(hero.id);
+    ev.target.classList.remove('selected');
+  }else{
+    addFavorite(hero.id);
+    ev.target.classList.add('selected');
+  }   
   };
-  
   return (
     <div className="card"id={hero.id}>
-      <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt={hero.name}  onClick={()=>onCardClick(hero.id)}  />
+      <img src={`${hero.thumbnail?.path}.${hero.thumbnail?.extension}`} alt={hero.name}  onClick={()=>onCardClick(hero.id)}  />
       <div className="card-desription">
         <h4>{hero.name}</h4>
         <button
           id={hero.id}
           onClick={handleAddFavorite}
-          className={isFav? 'card-favorite selected' : 'card-favorite'}
+          className={favorites && favorites.length>0 && favorites?.indexOf(hero.id)>-1? 'card-favorite selected' : 'card-favorite'}
         >         
         </button>
       </div>

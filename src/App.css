@@ -8,6 +8,7 @@ body {
   font-weight: 400 !important;
   font-style: normal;
   font-size: 1.6rem !important;
+  letter-spacing: 0em;
 }
 
 #root {

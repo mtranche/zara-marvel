@@ -1,11 +1,21 @@
 .detail{
+  position:relative;
+  
+  @include mq("0", "mobile"){
+    padding: 0;
+  }
+
   .comics--main{  
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-left: 27.5rem;
     margin-bottom: 5rem;
-
+    
+    @include mq("0", "tablet") {
+      padding-left: 1.5rem;
+    }
+    
     h2{
       margin:4.6rem 0 2.5rem 0;
       text-transform: uppercase;

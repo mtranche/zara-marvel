@@ -1,36 +1,37 @@
 
 import React, { useContext } from 'react';
 import favoriteUnselected from "../assets/images/favorite_unselected.png";
+import favorite from "../assets/images/favorite.png";
 import { MarvelContext } from "../contexts/MarvelContext.jsx";
 
 const HeroBanner = ({ hero }) => {
-  let ctx = useContext(MarvelContext)
-  console.log(ctx)
-
-  const handleFavoriteClick = function(){
-    const favoriteHeroes = JSON.parse(localStorage.getItem('favoriteHeroes')) || [];
+  let ctx = useContext(MarvelContext);
+  
+  const handleFavoriteClick = function(ev){
+    const favoriteHeroes = ctx.favorits || [];
     const favIndex = favoriteHeroes.indexOf(hero);
-    console.log(favIndex);
     if(favIndex<0){
         favoriteHeroes.push(hero);        
+        ev.target.src = favorite;
     }else{
         favoriteHeroes.splice(favIndex,1);
-        setIsFavorite(false);   
+        setIsFavorite(false);        
+        ev.target.src = favoriteUnselected;  
     }
-    if(value.favorites && value.favorites.includes(id)) {
-      const updatedFavorites = value.favorites.filter(favId => favId !== id);
-      setValue({
-        ...value,
+    if(ctx.favorites && ctx.favorites.lengt>0 && ctx.favorites.includes(hero.id)) {
+      const updatedFavorites = ctx.favorites.filter(favId => favId !== hero.id);
+      ctx.setFavorites({
+        ...ctx,
         favorites: updatedFavorites
       });
     } else {
-      setValue({
-        ...value,
-        favorites: [...value.favorites, id]
+      ctx.setFavorites({
+        ...ctx,
+        favorites: [...ctx.favorites, hero.id]
       });
     }
   };
- console.log(MarvelContext)
+  
   return (
     <div className="detail detail--hero-banner">
       {hero?.thumbnail?.path && hero?.thumbnail?.extension?

@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../views/Home";
 import DetailPage from "../views/DetailPage";
-import Favorites from "../views/Favorites";
+import FavoritesPage from "../views/FavoritesPage";
 import Error404 from "../views/404";
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/favorites',
-    element:<Favorites />
+    element:<FavoritesPage />
   }
 ]);
 function MarvelRoutes (){

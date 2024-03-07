@@ -11,11 +11,9 @@ function checkIsHeroFavorite(heroId){
 const useMarvelFavorites = (heroId) => {
     const [isFavorite, setIsFavorite] = useState(checkIsHeroFavorite(heroId));
     const toggleIsFavorite = function(heroId){
-        console.log('heroId ', heroId)
         const favoriteHeroes = JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY)) || [];
         const favIndex = favoriteHeroes.indexOf(heroId);
-        console.log(favIndex)
-    
+        
         if(favIndex<0){
             favoriteHeroes.push(heroId);
             setIsFavorite(true);

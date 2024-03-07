@@ -4,7 +4,6 @@ import Detail from '../components/Detail';
 
 function DetailPage(){
   const characterId = useParams();
-  console.log(characterId)
   return(
     <>
       <Header />

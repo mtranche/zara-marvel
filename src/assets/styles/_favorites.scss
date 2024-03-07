@@ -1,0 +1,16 @@
+.favorites-container{
+  @include mq("0", "tablet") {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.9;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-bottom: 1.6rem;
+  
+  }
+}

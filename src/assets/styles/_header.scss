@@ -1,35 +1,54 @@
-.marvel-header {
-  background: $secondary-bg;
-  height: 8.4rem;
-  padding: 1.6rem 4.8rem;
-  justify-content: space-between;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  color: $secondary-text;
-  
-  &__loading {
-    border-bottom: 0.5rem solid $tertiary-bg;
-  }
-   &--logo {
-    cursor: pointer;
+.header-container{
+  position: relative;
+
+  .marvel-header {
+    background: $secondary-bg;
+    height: 10rem;
+    padding: 1.6rem 4.8rem;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: $secondary-text;
+
+    @include mq("0", "tablet") {
+      padding:1.6rem;
+    }
+    
+    &__loading {
+      border-bottom: 0.5rem solid  $tertiary-bg;
+    }
+
+    &--logo {
+      cursor: pointer;
+    }    
   }
 
   .favorites-wrapper {
+    position:absolute;
+    top:3.3rem;
+    right: 13.4%;
     padding: 0.8rem;
     width: 5.6rem;
     height: 3.768rem;
     text-decoration: none;
-    color:inherit;
+    color:$secondary-text;
+    background: $secondary-bg;
     display: flex;
     gap: 0.8rem;
     align-items: center;
     justify-content: center;
+    z-index: 3;
+
+    @include mq("0", "mobile") {
+      right:4.4rem;
+    }
 
     > img {
       width: 2.4rem;
       height: auto;
       text-decoration: inherit;
+      cursor: pointer;
     }
 
     > span {

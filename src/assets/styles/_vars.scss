@@ -5,3 +5,43 @@ $primary-bg:#ffffff;
 $secondary-bg:#000000;
 $tertiary-bg:#EC1D24;
 $input-placeholder:#aaaa;
+
+// BREAKPOINTS
+$bp: (
+    "large-screen":1620px,
+    "desktop": 1440px,
+    "laptop": 1366px,
+    "landscape-large": 1100px,
+    "landscape": 1024px,
+    "tablet": 894px,
+    "mobile-l":639px,
+    "mobile": 384px,
+) !default;
+
+$default-bp: (
+    "min-width": "0",
+    "max-width": "portrait",
+) !default;
+
+// mediaqueries - mq($bp);
+@function bp($key) {
+  @return map-get($bp, $key);
+}
+@mixin mq(
+  $bp-min: map-get($default-bp, "min-width"),
+  $bp-max: map-get($default-bp, "max-width")
+) {
+  @if ($bp-max == "none") {
+    @media (min-width: bp($bp-min)) {
+      @content;
+    }
+  } @else if ($bp-min == "zero" or $bp-min == "0px" or $bp-min == "0") {
+    @media (max-width: bp($bp-max) - 1) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{bp($bp-min) or 0px}) and (max-width: bp($bp-max) - 1) {
+      @content;
+    }
+  }
+}

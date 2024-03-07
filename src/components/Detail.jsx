@@ -24,9 +24,9 @@ const Detail = (id) => {
     };
     fetchData();
   },[id]);
-  console.log(heroData)
+  
     return (
-    <div className="detail" id={`detail-{heroId}`}>
+    <div className="detail" id={`detail-${heroId}`}>
       <HeroBanner hero={heroData} isLoading={isLoading} />
       <div className='comics--main'>
         <Comics heroId={heroId}/>

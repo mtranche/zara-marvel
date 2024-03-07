@@ -10,7 +10,6 @@ const Comics = ({heroId}) => {
         const characterComicsApi = `${import.meta.env.VITE_MARVEL_API_CHARACTERS_ENDPOINT}/${heroId}/comics?apikey=${import.meta.env.VITE_MARVEL_API_KEY}`;       
         const response = await fetch(characterComicsApi);
         const data = await response.json();
-        console.log(data)
         setComics(data.data.results); 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -19,7 +18,6 @@ const Comics = ({heroId}) => {
     fetchData();
   },[heroId]);
   
-  console.log(comics)
   return (
       <div className="detail-comics-container">
         <h2>Comics</h2>

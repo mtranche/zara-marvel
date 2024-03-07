@@ -1,28 +1,24 @@
-import { React, useContext } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import '../assets/styles/marvel.scss';
 import marvelLogo from '../assets/images/marvel-logo.png';
 import favorite from '../assets/images/favorite.png';
 import { MarvelContext } from '../contexts/MarvelContext';
 
-
 function Header() {
-  const { numFavs, favorites, results, setResults } = useContext(MarvelContext);
+  const { numFavs } = useContext(MarvelContext);
   const location = useLocation();
-  const clsshowfavs = location.pathname.indexOf('detail')>0?'d-none':'';
-  const navigate = useNavigate(); 
-  let favoriteHeroes;
+  const navigate = useNavigate();
+  const clsshowfavs = location.pathname.indexOf('detail') > 0 ? 'd-none' : '';
 
-  const handleFavoriteClick = function(ev){
-    favoriteHeroes = results.filter(hero => favorites.includes(hero.id));
-    if(favoriteHeroes.length){
-      setResults(favoriteHeroes);    
-    } else {
-      setResults(results);
-    }
-    navigate('/favorites')
+
+
+  const handleFavoriteClick = () => {
+    navigate('/favorites');
   };
-  const handleLogoClick = function() {
+
+
+  const handleLogoClick = () => {
     navigate('/');
   };
   
