@@ -1,0 +1,24 @@
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {  
+  font-family: "Roboto-condensed", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal;
+  font-size: 1.6rem !important;
+  letter-spacing: 0em;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 ;
+  padding: 0;
+  width: 100%;
+}
+
+.App-container {
+  padding:0;
+}
+
