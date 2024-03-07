@@ -1,3 +1,4 @@
+
 # ZARA WEB CHALLENGE
 Esta es un aplicación para obtener información sobre diferentes personajes de Marvel usando la api que ellos ofrecen.
 
@@ -16,4 +17,18 @@ y nos dirá la versión de node y npm que tenemos, en caso de que no responda na
    ``npm run dev``
 4. Como dice la consola, abrimos [http://localhost:8080/](http://localhost:8080/)
 
+## Estructura del proyecto
+El proyecto tiene la estructura:
+![estructura del carpetas](https://github.com/mtranche/zara-marvel/blob/feature/marvel/estructura.png)
+
+ - En la carpeta raíz están todos los archivos de configuración, las variables de entornos, los packages de dependencias y cosas generícas de la aplicación
+ - En la carpeta dist está la build para servir en producción
+ - En la carpeta src está todo el código del proyecto: Los archivos principales: App y Main con sus respectivos estilos, y luego una serie de carpetas, en assets están imágenes y estilo, dentro de styles está el archivo principal, marvels.css que importa el resto de scss de cada componente
+  En components los componentes que se usan en la aplicación, cada uno con un archivo de estilos _*.scss  asociado en la carpeta assets/styles
+  En context está el contexto
+  En hook los hooks usados
+  En routes el enrutador para navegar entre vistas
+  y en views las distintas vistas que usan los componentes de components.
+
+        
 
